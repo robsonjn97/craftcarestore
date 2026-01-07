@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CraftCareStore - Perfumes Inspirados em Importados</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-left">
+                <button id="home-btn" class="icon-btn" title="Home">
+                    <i class="fas fa-home"></i>
+                </button>
+                <button id="address-btn" class="icon-btn" title="Meu Endereço">
+                    <i class="fas fa-map-marker-alt"></i>
+                </button>
+            </div>
+            
+            <div class="header-center">
+                <div class="search-bar">
+                    <input type="text" id="main-search" placeholder="Procure o perfume..." autocomplete="off">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <div class="cart-icon-wrapper">
+                    <div class="cart-icon" id="cart-icon-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Aviso de Qualidade -->
+    <section class="quality-notice">
+        <div class="container">
+            <div class="notice-content">
+                <i class="fas fa-certificate"></i>
+                <p>Todos os nossos perfumes são inspirados em importados e vêm com essa informação clara na embalagem. Com matéria prima de qualidade, produzimos produtos de primeira linha para você revender com confiança!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filtros -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="category-filter">Gênero:</label>
+                    <select id="category-filter">
+                        <option value="todos">Todos</option>
+                        <option value="Feminino">Feminino</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Body Splash">Body Splash</option>
+                    </select>
+                </div>
+                <button id="reset-filters" class="btn-secondary">Limpar Filtros</button>
+            </div>
+            <div class="info-note">
+                <p><i class="fas fa-info-circle"></i> Preço de 100ml para 2 unidades (25% Parfum) | Preço de 30ml para 5 unidades (33% Extract Parfum/Elixir)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lista de Perfumes -->
+    <main class="container">
+        <div id="perfumes-list" class="perfumes-grid">
+            <!-- Os perfumes serão carregados aqui via JavaScript -->
+        </div>
+    </main>
+
+    <!-- Carrinho de Compras -->
+    <aside id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Seu Carrinho</h2>
+            <button id="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        
+        <div id="cart-items" class="cart-items-container">
+            <p class="empty-cart-msg">Seu carrinho está vazio</p>
+        </div>
+        
+        <div class="cart-summary">
+            <div class="summary-row">
+                <span>Total:</span>
+                <span id="summary-total">R$ 0,00</span>
+            </div>
+            <button id="checkout-btn" class="btn-primary">Finalizar Pedido</button>
+        </div>
+    </aside>
+
+    <!-- Modal de Finalização -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Finalizar Pedido</h2>
+                <button id="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="delivery-option">
+                    <h3>Forma de Recebimento</h3>
+                    <div class="option-buttons">
+                        <button class="option-btn active" data-option="pickup">Retirar na Loja</button>
+                        <button class="option-btn" data-option="delivery">Receber em Casa</button>
+                    </div>
+                    <p class="pickup-info">O endereço de retirada será enviado após a confirmação do pedido via WhatsApp.</p>
+                </div>
+                
+                <form id="delivery-form" style="display: none;">
+                    <h3>Informações para Entrega</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="client-name">Nome Completo *</label>
+                            <input type="text" id="client-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="client-phone">Telefone/WhatsApp *</label>
+                            <input type="tel" id="client-phone" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="client-address">Endereço Completo *</label>
+                        <textarea id="client-address" rows="3" required></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="client-neighborhood">Bairro *</label>
+                            <input type="text" id="client-neighborhood" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="client-city">Cidade *</label>
+                            <input type="text" id="client-city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="client-state">Estado *</label>
+                            <input type="text" id="client-state" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="client-notes">Observações</label>
+                        <textarea id="client-notes" rows="2" placeholder="Ponto de referência, complemento..."></textarea>
+                    </div>
+                </form>
+                
+                <div class="order-summary">
+                    <h3>Resumo do Pedido</h3>
+                    <div id="modal-order-items"></div>
+                    <div class="summary-total">
+                        <span>Total do Pedido:</span>
+                        <span id="modal-total">R$ 0,00</span>
+                    </div>
+                </div>
+                
+                <div class="whatsapp-info">
+                    <i class="fab fa-whatsapp"></i>
+                    <p>Seu pedido será enviado via WhatsApp para o número: <strong>(19) 99897-8060</strong></p>
+                </div>
+                
+                <div class="whatsapp-action-button">
+                    <button id="send-whatsapp-main" class="btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Enviar Pedido via WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <button id="cancel-order" class="btn-secondary">Cancelar</button>
+                <button id="send-whatsapp" class="btn-primary">
+                    <i class="fab fa-whatsapp"></i> Enviar Pedido via WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay para carrinho e modal -->
+    <div id="overlay"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>CraftCare<span>Store</span></h2>
+                    <p>Perfumes inspirados nos melhores importados</p>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <p><i class="fab fa-whatsapp"></i> (19) 99897-8060</p>
+                    <p>Pedidos apenas via WhatsApp</p>
+                </div>
+                <div class="footer-info">
+                    <h3>Informações</h3>
+                    <p>Preços promocionais por quantidade</p>
+                    <p>Frete calculado após confirmação</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 CraftCareStore. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

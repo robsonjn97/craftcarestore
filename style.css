@@ -1,0 +1,1133 @@
+/* Reset e configurações gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #1e88e5;
+    --primary-dark: #1565c0;
+    --primary-light: #64b5f6;
+    --secondary: #4fc3f7;
+    --secondary-dark: #0288d1;
+    --light: #f8f9fa;
+    --dark: #2c3e50;
+    --gray: #6c757d;
+    --light-gray: #e9ecef;
+    --success: #28a745;
+    --whatsapp: #25D366;
+    --whatsapp-dark: #128C7E;
+    --warning: #ff9800;
+    --danger: #e53935;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f8ff;
+    color: var(--dark);
+    line-height: 1.6;
+    padding-bottom: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-left, .header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-center {
+    flex: 1;
+    max-width: 600px;
+}
+
+.icon-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.icon-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+.search-bar {
+    position: relative;
+    width: 100%;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 0.85rem 1rem 0.85rem 3rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: var(--transition);
+    backdrop-filter: blur(5px);
+}
+
+.search-bar input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-bar input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.search-bar i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.cart-icon-wrapper {
+    position: relative;
+}
+
+.cart-icon {
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.3rem;
+    transition: var(--transition);
+    position: relative;
+}
+
+.cart-icon:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+.cart-icon span {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--secondary);
+    color: white;
+    font-size: 0.75rem;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    border: 2px solid var(--primary-dark);
+}
+
+/* Aviso de Qualidade */
+.quality-notice {
+    background: linear-gradient(to right, var(--primary-light), var(--secondary));
+    color: white;
+    padding: 1rem 0;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.notice-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.notice-content i {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.notice-content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Filtros */
+.filters-section {
+    background-color: white;
+    padding: 1.5rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+    border-radius: 0 0 12px 12px;
+    border: 1px solid #e3f2fd;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: flex-end;
+    margin-bottom: 1rem;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 200px;
+}
+
+.filter-group label {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--dark);
+    font-size: 0.95rem;
+}
+
+.filter-group select {
+    padding: 0.85rem 1rem;
+    border: 2px solid #bbdefb;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: var(--transition);
+    background-color: #f8fdff;
+}
+
+.filter-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.15);
+    background-color: white;
+}
+
+.btn-secondary {
+    padding: 0.85rem 1.8rem;
+    background-color: #e3f2fd;
+    color: var(--primary-dark);
+    border: 2px solid #bbdefb;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    white-space: nowrap;
+    font-size: 0.95rem;
+}
+
+.btn-secondary:hover {
+    background-color: #bbdefb;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-note {
+    background: linear-gradient(to right, #e3f2fd, #bbdefb);
+    padding: 0.9rem 1.2rem;
+    border-radius: 10px;
+    color: var(--primary-dark);
+    font-size: 0.9rem;
+    border-left: 4px solid var(--primary);
+}
+
+.info-note i {
+    margin-right: 0.5rem;
+    color: var(--primary);
+}
+
+/* Lista de Perfumes */
+.perfumes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.8rem;
+    margin-bottom: 3rem;
+}
+
+.perfume-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+    border: 1px solid #e3f2fd;
+}
+
+.perfume-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(30, 136, 229, 0.15);
+}
+
+.perfume-category {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: var(--primary);
+    color: white;
+    padding: 0.35rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.perfume-info {
+    padding: 1.8rem;
+}
+
+.perfume-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    color: var(--dark);
+    padding-top: 0.5rem;
+}
+
+.perfume-concentrations {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-bottom: 1.8rem;
+}
+
+.concentration {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f8fdff;
+    border-radius: 10px;
+    border: 2px solid #e3f2fd;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.concentration.selected {
+    background-color: #e3f2fd;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(30, 136, 229, 0.2);
+}
+
+.concentration:hover {
+    border-color: var(--primary-light);
+}
+
+.concentration-info h4 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+    color: var(--dark);
+}
+
+.concentration-info p {
+    font-size: 0.85rem;
+    color: var(--gray);
+    font-weight: 500;
+}
+
+.concentration-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.perfume-actions {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    background-color: #f8fdff;
+    border-radius: 10px;
+    overflow: hidden;
+    flex: 1;
+    border: 2px solid #e3f2fd;
+}
+
+.quantity-btn {
+    background-color: #e3f2fd;
+    border: none;
+    padding: 0.6rem 0.9rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: var(--primary-dark);
+    transition: var(--transition);
+    min-width: 45px;
+}
+
+.quantity-btn:hover {
+    background-color: #bbdefb;
+}
+
+.quantity-btn:active {
+    transform: scale(0.95);
+}
+
+.quantity-value {
+    padding: 0 0.5rem;
+    min-width: 50px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--dark);
+    font-size: 1.1rem;
+}
+
+.btn-primary {
+    background: linear-gradient(to right, var(--primary), var(--primary-dark));
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 0.85rem 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 6px rgba(30, 136, 229, 0.2);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to right, var(--primary-dark), #0d47a1);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(30, 136, 229, 0.3);
+}
+
+.btn-primary:active {
+    transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+    background: #b0bec5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Carrinho de Compras */
+#cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 380px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    transition: right 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#cart-sidebar.open {
+    right: 0;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 2px solid #e3f2fd;
+    background: linear-gradient(to right, var(--primary), var(--primary-dark));
+    color: white;
+    flex-shrink: 0;
+}
+
+.cart-header h2 {
+    font-size: 1.5rem;
+    color: white;
+}
+
+#close-cart {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#close-cart:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.cart-items-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.5rem;
+    background-color: #fafdff;
+    min-height: 0;
+}
+
+.empty-cart-msg {
+    text-align: center;
+    color: var(--gray);
+    padding: 3rem 0;
+    font-size: 1.1rem;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1.2rem;
+    border-bottom: 1px solid #e3f2fd;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 0.8rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.cart-item-info h4 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+    color: var(--dark);
+}
+
+.cart-item-info p {
+    font-size: 0.85rem;
+    color: var(--primary-dark);
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+}
+
+.cart-item-price {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 1.1rem;
+    white-space: nowrap;
+    margin-left: 1rem;
+}
+
+.cart-item-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    background-color: #f8fdff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #bbdefb;
+}
+
+.cart-item-quantity button {
+    background: none;
+    border: none;
+    padding: 0.4rem 0.6rem;
+    cursor: pointer;
+    color: var(--primary-dark);
+    font-weight: 600;
+    min-width: 32px;
+    transition: var(--transition);
+}
+
+.cart-item-quantity button:hover {
+    background-color: #e3f2fd;
+}
+
+.cart-item-quantity span {
+    padding: 0 0.5rem;
+    min-width: 30px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.remove-item {
+    background: none;
+    border: none;
+    color: #e53935;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 0.4rem;
+    border-radius: 6px;
+    transition: var(--transition);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.remove-item:hover {
+    background-color: #ffebee;
+}
+
+.cart-summary {
+    padding: 1.5rem;
+    border-top: 2px solid #e3f2fd;
+    background-color: white;
+    flex-shrink: 0;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--dark);
+}
+
+#checkout-btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Modal de Finalização */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1100;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.modal.open {
+    display: flex;
+}
+
+.modal-content {
+    background-color: white;
+    width: 100%;
+    max-width: 800px;
+    max-height: 90vh;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: linear-gradient(to right, var(--primary), var(--primary-dark));
+    color: white;
+    flex-shrink: 0;
+}
+
+.modal-header h2 {
+    font-size: 1.5rem;
+}
+
+#close-modal {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+#close-modal:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.modal-body {
+    padding: 1.5rem;
+    overflow-y: auto;
+    flex: 1;
+    background-color: #fafdff;
+    min-height: 0;
+}
+
+.delivery-option {
+    margin-bottom: 2rem;
+}
+
+.option-buttons {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.option-btn {
+    flex: 1;
+    padding: 1.2rem;
+    background-color: #e3f2fd;
+    border: 2px solid #bbdefb;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1rem;
+    color: var(--primary-dark);
+}
+
+.option-btn.active {
+    background-color: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    box-shadow: 0 4px 8px rgba(30, 136, 229, 0.2);
+}
+
+.option-btn:hover:not(.active) {
+    background-color: #bbdefb;
+}
+
+.pickup-info {
+    background-color: #e8f4ff;
+    padding: 0.9rem 1.2rem;
+    border-radius: 10px;
+    color: var(--primary-dark);
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    border-left: 4px solid var(--primary);
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--dark);
+    font-size: 0.95rem;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.9rem;
+    border: 2px solid #bbdefb;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: var(--transition);
+    background-color: #f8fdff;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.15);
+    background-color: white;
+}
+
+.order-summary {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 12px;
+    border: 2px solid #e3f2fd;
+}
+
+.modal-order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid #e3f2fd;
+}
+
+.modal-order-item:last-child {
+    border-bottom: none;
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-top: 1.2rem;
+    padding-top: 1.2rem;
+    border-top: 2px solid #bbdefb;
+    color: var(--dark);
+}
+
+.whatsapp-info {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    background: linear-gradient(to right, #e8f5e9, #c8e6c9);
+    color: var(--dark);
+    padding: 1.2rem;
+    border-radius: 12px;
+    margin-top: 1.5rem;
+    border-left: 4px solid var(--whatsapp);
+}
+
+.whatsapp-info i {
+    font-size: 2.2rem;
+    color: var(--whatsapp);
+}
+
+.whatsapp-info p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.whatsapp-info strong {
+    color: var(--whatsapp-dark);
+}
+
+/* Botão de WhatsApp principal */
+.whatsapp-action-button {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background-color: #e8f5e9;
+    border-radius: 12px;
+    border: 2px solid #c8e6c9;
+    text-align: center;
+}
+
+.btn-whatsapp {
+    background: linear-gradient(to right, var(--whatsapp), var(--whatsapp-dark));
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 1.2rem 2rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.btn-whatsapp:hover {
+    background: linear-gradient(to right, #1da851, #0d7e5a);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+    border-top: 2px solid #e3f2fd;
+    background-color: white;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+.modal-footer .btn-secondary, .modal-footer .btn-primary {
+    flex: 1;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+/* Overlay */
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    backdrop-filter: blur(2px);
+}
+
+#overlay.active {
+    display: block;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(to right, var(--primary-dark), #0d47a1);
+    color: white;
+    padding: 3rem 0 1.5rem;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.footer-logo h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-logo span {
+    color: var(--secondary);
+}
+
+.footer-contact h3, .footer-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--secondary);
+}
+
+.footer-contact p, .footer-info p {
+    margin-bottom: 0.5rem;
+    opacity: 0.95;
+}
+
+.footer-contact i {
+    margin-right: 0.5rem;
+    color: var(--secondary);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    opacity: 0.9;
+    font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header .container {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .header-left, .header-right {
+        order: 1;
+        flex: 1;
+    }
+    
+    .header-right {
+        justify-content: flex-end;
+    }
+    
+    .header-center {
+        order: 2;
+        min-width: 100%;
+    }
+    
+    .filters {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.2rem;
+    }
+    
+    .filter-group {
+        min-width: 100%;
+    }
+    
+    .perfumes-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.2rem;
+    }
+    
+    #cart-sidebar {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .modal-content {
+        width: 95%;
+        height: 95vh;
+        margin: 1rem;
+    }
+    
+    .modal-footer {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .modal-footer .btn-secondary, .modal-footer .btn-primary {
+        width: 100%;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .option-buttons {
+        flex-direction: column;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .perfume-actions {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .quantity-selector {
+        width: 100%;
+    }
+    
+    .btn-primary {
+        width: 100%;
+    }
+    
+    .notice-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.8rem;
+    }
+    
+    .whatsapp-info {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.8rem;
+    }
+    
+    .btn-whatsapp {
+        font-size: 1rem;
+        padding: 1rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .icon-btn, .cart-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+    
+    .search-bar input {
+        padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+        font-size: 0.95rem;
+    }
+    
+    .perfumes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-header, .cart-header {
+        padding: 1.2rem;
+    }
+    
+    .modal-body, .cart-items-container {
+        padding: 1.2rem;
+    }
+    
+    .btn-whatsapp {
+        font-size: 0.9rem;
+        padding: 0.9rem 1.2rem;
+    }
+}
+
+/* Mensagem sem resultados */
+.no-results {
+    text-align: center;
+    padding: 3rem;
+    color: var(--gray);
+    font-size: 1.1rem;
+    grid-column: 1 / -1;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
