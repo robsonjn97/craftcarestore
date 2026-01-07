@@ -70,6 +70,15 @@ header .container {
     max-width: 600px;
 }
 
+.store-name h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
 .icon-btn {
     background: rgba(255, 255, 255, 0.15);
     border: 2px solid rgba(255, 255, 255, 0.2);
@@ -1005,6 +1014,10 @@ footer {
         min-width: 100%;
     }
     
+    .store-name h1 {
+        font-size: 1.3rem;
+    }
+    
     .filters {
         flex-direction: column;
         align-items: stretch;
@@ -1117,6 +1130,10 @@ footer {
     .btn-whatsapp {
         font-size: 0.9rem;
         padding: 0.9rem 1.2rem;
+    }
+    
+    .store-name h1 {
+        font-size: 1.1rem;
     }
 }
 
