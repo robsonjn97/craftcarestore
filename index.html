@@ -19,31 +19,34 @@
     <!-- Header -->
     <header>
         <div class="container">
-            <div class="header-left">
-                <div class="store-name">
-                    <h1>Craftcarestore</h1>
+            <div class="header-top">
+                <div class="header-left">
+                    <button id="home-btn" class="icon-btn" title="Home">
+                        <i class="fas fa-home"></i>
+                    </button>
                 </div>
-                <button id="home-btn" class="icon-btn" title="Home">
-                    <i class="fas fa-home"></i>
-                </button>
-                <button id="address-btn" class="icon-btn" title="Meu Endereço">
-                    <i class="fas fa-map-marker-alt"></i>
-                </button>
+                
+                <div class="header-center">
+                    <div class="store-name">
+                        <h1>Craftcarestore</h1>
+                        <p class="store-tagline">Perfumes inspirados em importados</p>
+                    </div>
+                </div>
+                
+                <div class="header-right">
+                    <div class="cart-icon-wrapper">
+                        <div class="cart-icon" id="cart-icon-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span id="cart-count">0</span>
+                        </div>
+                    </div>
+                </div>
             </div>
             
-            <div class="header-center">
+            <div class="header-bottom">
                 <div class="search-bar">
                     <input type="text" id="main-search" placeholder="Procure o perfume..." autocomplete="off">
                     <i class="fas fa-search"></i>
-                </div>
-            </div>
-            
-            <div class="header-right">
-                <div class="cart-icon-wrapper">
-                    <div class="cart-icon" id="cart-icon-btn">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span id="cart-count">0</span>
-                    </div>
                 </div>
             </div>
         </div>
@@ -69,13 +72,14 @@
                         <option value="todos">Todos</option>
                         <option value="Feminino">Feminino</option>
                         <option value="Masculino">Masculino</option>
+                        <option value="Compartilhável">Compartilhável</option>
                         <option value="Body Splash">Body Splash</option>
                     </select>
                 </div>
                 <button id="reset-filters" class="btn-secondary">Limpar Filtros</button>
             </div>
             <div class="info-note">
-                <p><i class="fas fa-info-circle"></i> Preço de 100ml para 2 unidades (25% Parfum) | Preço de 30ml para 5 unidades (33% Extract Parfum/Elixir)</p>
+                <p><i class="fas fa-info-circle"></i> Preço de 100ml para 2 unidades (25% Parfum) | Preço de 30ml para 5 unidades (33% Extract Parfum/Elixir) | Preço de 100ml para 3 unidades (33% Parfum)</p>
             </div>
         </div>
     </section>
